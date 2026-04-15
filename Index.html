@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Poll Survey App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Home Page -->
+    <div id="homePage" class="page active">
+        <h1>🏠 Welcome</h1>
+        <p style="margin:15px 0;">Welcome to Premium Poll Survey App</p>
+        <button onclick="showPage('authPage')">Continue</button>
+    </div>
+
+    <!-- Auth Page -->
+    <div id="authPage" class="page">
+        <h1>🔐 Login / Register</h1>
+        <input type="text" id="username" placeholder="Enter username">
+        <input type="password" id="password" placeholder="Enter password">
+        <button onclick="register()">Register</button>
+        <button onclick="login()">Login</button>
+    </div>
+
+    <!-- Vote Page -->
+    <div id="votePage" class="page">
+        <h1>🗳 Vote Your Choice</h1>
+
+        <div class="option" onclick="selectVote(0)">AI</div>
+        <div class="option" onclick="selectVote(1)">Web Development</div>
+        <div class="option" onclick="selectVote(2)">Cyber Security</div>
+        <div class="option" onclick="selectVote(3)">Data Science</div>
+
+        <button onclick="submitVote()">Submit Vote</button>
+    </div>
+
+    <!-- Dashboard Page -->
+    <div id="dashboardPage" class="page">
+        <h1>📊 Dashboard</h1>
+
+        <div class="card">
+            <p id="totalUsers"></p>
+            <p id="totalVotes"></p>
+            <p id="winner"></p>
+        </div>
+
+        <div class="card" id="results"></div>
+
+        <button onclick="showPage('homePage')">🏠 Home</button>
+        <button onclick="logout()">🔓 Logout</button>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
